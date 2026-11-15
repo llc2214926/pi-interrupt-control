@@ -1,11 +1,11 @@
 {
   "name": "pi-interrupt-control",
   "version": "0.1.0",
-  "description": "Resume interrupted Pi tasks with a dot and retry model requests before fallback.",
+  "description": "Continue Pi tasks with a dot or a new-session handoff, and retry model requests before fallback.",
   "type": "module",
   "license": "MIT",
   "keywords": ["pi-package", "pi-extension", "retry", "continue"],
-  "files": ["src", "README.md", "LICENSE"],
+  "files": ["src", "README.md", "README.en.md", "LICENSE"],
   "pi": {
     "extensions": ["./src/index.ts"]
   },
@@ -16,9 +16,9 @@
     "check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@earendil-works/pi-agent-core": "*",
-    "@earendil-works/pi-ai": "*",
-    "@earendil-works/pi-coding-agent": "*"
+    "@earendil-works/pi-agent-core": ">=1.5.0",
+    "@earendil-works/pi-ai": ">=1.5.0",
+    "@earendil-works/pi-coding-agent": ">=1.5.0"
   },
   "devDependencies": {
     "@earendil-works/pi-agent-core": "1.5.2",
