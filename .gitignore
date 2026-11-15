@@ -1,0 +1,18 @@
+node_modules/
+.cache/
+dist/
+coverage/
+*.tgz
+*.log
+.DS_Store
+/.pi/
+
+# Tests, mocks and fixtures stay local and must not be committed.
+test/
+tests/
+__tests__/
+__mocks__/
+fixtures/
+*.test.*
+*.spec.*
+/docs
