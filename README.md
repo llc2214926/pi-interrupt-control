@@ -1,6 +1,6 @@
 # pi-interrupt-control
 
-将 `dot-continue` 和 `retry-before-fallback` 合为一个 Pi 扩展：用句点继续任务，在模型请求失败时先重试，再决定是否交给 Pi 回退处理。
+一个 Pi 扩展：用句点继续任务，在模型请求失败时先重试，再决定是否交给 Pi 回退处理。
 
 ## 功能
 
@@ -33,20 +33,6 @@ pi install /绝对路径/pi-interrupt-control
 ```sh
 pi --no-extensions --extension /绝对路径/pi-interrupt-control/src/index.ts
 ```
-
-### 从两个旧扩展迁移
-
-**不要同时启用新旧扩展**，否则可能出现命令冲突或重复重试。先把旧脚本移出自动加载目录，保留备份：
-
-```sh
-backup="$HOME/.pi/agent/extension-backups/interrupt-control-$(date +%Y%m%d-%H%M%S)"
-mkdir -p "$backup"
-mv "$HOME/.pi/agent/extensions/dot-continue.ts" "$backup/"
-mv "$HOME/.pi/agent/extensions/retry-before-fallback.ts" "$backup/"
-pi install git:github.com/llc2214926/pi-interrupt-control
-```
-
-如果曾在 `settings.json` 或启动参数中显式加载旧脚本，也应移除这些引用。完成后重启 Pi 或执行 `/reload`。
 
 ## 用法
 
